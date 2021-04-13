@@ -22,7 +22,14 @@ function App() {
   const [ddd, setDDD] = useState('')
   const [erroCEP, setErroCEP] = useState('')
 
-  
+  const verificaEnter = (e) => {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      e.preventDefault()
+      buscaCEP(cepP)
+    }
+  }
+
+
   async function buscaCEP(cepP) {
     let url = `https://viacep.com.br/ws/${cepP}/json/`
     await fetch(url)
@@ -74,7 +81,7 @@ function App() {
             <Form inline>
               <FormControl type="text" value={cepP}
                 onChange={event => setCEPP(event.target.value)}
-                placeholder="Digite o CEP..."
+                placeholder="Digite o CEP..." onKeyDown={(e) => verificaEnter(e)}
               />
               &nbsp;
               <Button variant="info" onClick={() => buscaCEP(cepP)}>Buscar CEP</Button>
