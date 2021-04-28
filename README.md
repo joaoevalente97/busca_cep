@@ -1,5 +1,9 @@
 https://woliveiras.com.br/posts/deploy-de-uma-aplica%C3%A7%C3%A3o-react-no-github-pages/
 
+# Comandos que precisam ser usados para utilização completa local
+npm i
+npm install --save-dev gh-pages
+
 Integrantes:
 
 João Victor Silva Esteves Valente;
