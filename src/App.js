@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 import { Row } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -28,7 +27,6 @@ function App() {
       buscaCEP(cepP)
     }
   }
-
 
   async function buscaCEP(cepP) {
     let url = `https://viacep.com.br/ws/${cepP}/json/`
@@ -68,16 +66,15 @@ function App() {
   return (
     <>
       <Container className="justify-content-md-center">
-        <Col>
+        <Col className="mt-2">
           <Row className="justify-content-md-center">
-            <img alt="logo" src={logo} />
+            <img alt="logo" src={logo}/>
           </Row>
           <Row className="justify-content-md-center">
             <h1>Busca CEP</h1>
           </Row>
 
           <Row className="justify-content-md-center">
-
             <Form inline>
               <FormControl type="text" value={cepP}
                 onChange={event => setCEPP(event.target.value)}
@@ -118,7 +115,6 @@ function App() {
               </Card.Body>
             </Card>
           }
-
         </Col>
       </Container>
     </>
